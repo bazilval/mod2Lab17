@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="450">
     <Grid>
-        <local:ColorSlider HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+        <local:ColorPicker HorizontalAlignment="Left" Height="105" Margin="51,50,0,0" VerticalAlignment="Top" Width="313" Loaded="ColorPicker_Loaded"/>
     </Grid>
+
 </Window>

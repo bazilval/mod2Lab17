@@ -25,5 +25,10 @@ namespace mod2Lab17
             InitializeComponent();
 
     }
+
+        private void ColorPicker_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
