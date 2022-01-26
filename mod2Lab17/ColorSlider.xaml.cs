@@ -33,17 +33,40 @@ namespace mod2Lab17
         static ColorPicker()
         {
             // Регистрация свойств зависимости
-            ColorProperty = DependencyProperty.Register("Color", typeof(Color), typeof(ColorPicker),
-                new FrameworkPropertyMetadata(Colors.Black, new PropertyChangedCallback(OnColorChanged)));
-            RedProperty = DependencyProperty.Register("Red", typeof(byte), typeof(ColorPicker),
-                new FrameworkPropertyMetadata(new PropertyChangedCallback(OnColorRGBChanged)));
-            GreenProperty = DependencyProperty.Register("Green", typeof(byte), typeof(ColorPicker),
-                new FrameworkPropertyMetadata(new PropertyChangedCallback(OnColorRGBChanged)));
-            BlueProperty = DependencyProperty.Register("Blue", typeof(byte), typeof(ColorPicker),
-                 new FrameworkPropertyMetadata(new PropertyChangedCallback(OnColorRGBChanged)));
+            ColorProperty = DependencyProperty.Register(
+                nameof(Color), 
+                typeof(Color), 
+                typeof(ColorPicker),
+                new FrameworkPropertyMetadata(
+                    Colors.Black,
+                    new PropertyChangedCallback(OnColorChanged)));
+            RedProperty = DependencyProperty.Register(
+                nameof(Red),
+                typeof(byte), 
+                typeof(ColorPicker),
+                new FrameworkPropertyMetadata(
+                    default(byte),
+                    new PropertyChangedCallback(OnColorRGBChanged)));
+            GreenProperty = DependencyProperty.Register(
+                nameof(Green), 
+                typeof(byte), 
+                typeof(ColorPicker),
+                new FrameworkPropertyMetadata(
+                    default(byte),
+                    new PropertyChangedCallback(OnColorRGBChanged)));
+            BlueProperty = DependencyProperty.Register(
+                nameof(Blue), 
+                typeof(byte), 
+                typeof(ColorPicker),
+                 new FrameworkPropertyMetadata(
+                     default(byte),
+                     new PropertyChangedCallback(OnColorRGBChanged)));
 
-            ColorChangedEvent = EventManager.RegisterRoutedEvent("ColorChanged", RoutingStrategy.Bubble,
-    typeof(RoutedPropertyChangedEventHandler<Color>), typeof(ColorPicker)); 
+            ColorChangedEvent = EventManager.RegisterRoutedEvent(
+                "ColorChanged", 
+                RoutingStrategy.Bubble,
+                typeof(RoutedPropertyChangedEventHandler<Color>), 
+                typeof(ColorPicker)); 
         }
 
         public Color Color
@@ -67,8 +90,7 @@ namespace mod2Lab17
             set { SetValue(BlueProperty, value); }
         }
 
-        private static void OnColorRGBChanged(DependencyObject sender,
-            DependencyPropertyChangedEventArgs e)
+        private static void OnColorRGBChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
             ColorPicker colorPicker = (ColorPicker)sender;
             Color color = colorPicker.Color;
@@ -82,8 +104,7 @@ namespace mod2Lab17
             colorPicker.Color = color;
         }
 
-        private static void OnColorChanged(DependencyObject sender,
-      DependencyPropertyChangedEventArgs e)
+        private static void OnColorChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
             Color newColor = (Color)e.NewValue;
             ColorPicker colorpicker = (ColorPicker)sender;

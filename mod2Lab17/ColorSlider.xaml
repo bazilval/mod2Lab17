@@ -1,6 +1,10 @@
 ﻿<UserControl x:Class="mod2Lab17.ColorPicker"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="110" d:DesignWidth="300"
              Name ="colorPicker">
     <UserControl.Resources>
         <Style TargetType="TextBlock">
@@ -11,7 +15,7 @@
         </Style>
     </UserControl.Resources>
     <Border Height="{Binding ElementName=colorPicker, Path=Height}" Width="{Binding ElementName=colorPicker, Path=Width}" BorderBrush="{Binding ElementName=colorPicker, Path=BorderBrush}" BorderThickness="{Binding ElementName=colorPicker, Path=BorderThickness}" Background="{Binding ElementName=colorPicker, Path=Background}">
-        <Grid >
+        <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="55"/>
                 <ColumnDefinition/>
@@ -29,7 +33,7 @@
             </StackPanel>
             <Rectangle Grid.Column="2" x:Name="colorRectangle" Stroke="Black" StrokeThickness="1" Margin="10">
                 <Rectangle.Fill>
-                    <SolidColorBrush Color="{Binding ElementName=colorPicker,Path=Color}"></SolidColorBrush>
+                    <SolidColorBrush Color="{Binding ElementName=colorPicker,Path=Color}"/>
                 </Rectangle.Fill>
             </Rectangle>
         </Grid>
