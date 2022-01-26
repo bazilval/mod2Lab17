@@ -7,7 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <local:ColorPicker/>
         <local:ColorPicker HorizontalAlignment="Left" Height="124" Margin="180,157,0,0" VerticalAlignment="Top" Width="378"/>
 
     </Grid>

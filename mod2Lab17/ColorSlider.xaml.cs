@@ -30,6 +30,11 @@ namespace mod2Lab17
         public static readonly DependencyProperty BlueProperty;
         public static readonly RoutedEvent ColorChangedEvent;
         // Регистрация свойств зависимости
+        public ColorPicker()
+        {
+            InitializeComponent();
+        }
+        
         static ColorPicker()
         {
             // Регистрация свойств зависимости
